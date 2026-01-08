@@ -1,0 +1,7 @@
+opendrift
+copernicusmarine
+cf_xarray
+matplotlib
+netCDF4
+scipy
+xarray
