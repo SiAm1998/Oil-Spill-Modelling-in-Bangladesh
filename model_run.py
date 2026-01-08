@@ -13,7 +13,7 @@ USERNAME = os.getenv("COPERNICUS_USER")
 PASSWORD = os.getenv("COPERNICUS_PASS")
 
 if not USERNAME or not PASSWORD:
-    print("⚠️ WARNING: Credentials not found. Please set COPERNICUS_USER and COPERNICUS_PASS.")
+    print("WARNING: Credentials not found. Please set COPERNICUS_USER and COPERNICUS_PASS.")
     # You can uncomment below for local testing, but NEVER commit to GitHub
     # USERNAME = "your_email"
     # PASSWORD = "your_password"
@@ -89,7 +89,7 @@ def add_readers(o):
         o.add_reader(reader_current)
         o.add_reader(reader_wind)
         o.add_reader(reader_wave)
-        print("✅ MetOcean data loaded successfully.")
+        print("MetOcean data loaded successfully.")
         
     except Exception as e:
         print(f"❌ Error loading CMEMS data: {e}")
@@ -111,11 +111,11 @@ def run_simulation(o):
 
     end_time = START_TIME + datetime.timedelta(days=DURATION_DAYS)
     
-    print("🚀 Starting simulation...")
+    print("Starting simulation...")
     o.run(end_time=end_time, time_step=7200, time_step_output=14400)
     
     # Generate Outputs
-    print("💾 Saving outputs...")
+    print("Saving outputs...")
     if not os.path.exists('output'):
         os.makedirs('output')
         
